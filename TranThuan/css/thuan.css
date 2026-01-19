@@ -1,0 +1,125 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#viewer{
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* #img{  //ẢNH
+    background: url("../img/anhnen.jpg") no-repeat center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    transform: scale(1) translate(0,0);
+    transition: transform 0.08s linear;
+    cursor: grab;
+} */
+
+/* //VIDEO */
+#img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1) translate(0,0);
+    transition: transform 0.08s linear;
+    cursor: grab;
+}
+
+/* Nút fullscreen đỏ nhạt */
+#fsBtn{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 80, 80, 0.35);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+#fsBtn:hover{
+    background: rgba(255, 80, 80, 0.6);
+}
+
+
+
+#playBtn{
+    position: fixed;
+    right: 80px;   /*  <button id="playBtn" title="Tạm dừng">⏸</button>, đứng trước nút Toàn màn hình */
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(80, 160, 255, 0.35);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+#playBtn:hover{
+    background: rgba(80, 160, 255, 0.6);
+}
+
+
+/* Khi vào fullscreen: nút sẽ hiện 3 giây rồi tự ẩn
+Click hoặc di chuột: hiện lại 3 giây rồi lại ẩn
+Khi thoát fullscreen: luôn hiện */
+.hideUI{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+.showUI{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s;
+}
+
+/* ảnh nền */
+#img, #photo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: grab;
+    transform: scale(1) translate(0,0);
+}
+#modeBtn{
+    position: fixed;
+    right: 140px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border:none;
+    background: rgba(80,200,120,.35);
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+#modeBtn:hover{background: rgba(80,200,120,.6);}
+
+
+/*  */
+#colorText{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;          /* chỉnh lên/xuống tại đây */
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+}
